@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  # Serviço do MySQL
+  # mysql:
+  #   image: mysql:8.0
+  #   container_name: mysql
+  #   restart: unless-stopped
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: laravel_db
+  #     MYSQL_USER: laravel_user
+  #     MYSQL_PASSWORD: laravel_password
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   ports:
+  #     - "3306:3306"
+  #   networks:
+  #     - app-network
+
+  # Serviço do Laravel (backend)
+  # backend:
+  #   build:
+  #     context: git@github.com:usuario/laravel-backend.git # Repositório do backend
+  #   container_name: laravel-app
+  #   restart: unless-stopped
+  #   environment:
+  #     - DB_CONNECTION=mysql
+  #     - DB_HOST=mysql
+  #     - DB_PORT=3306
+  #     - DB_DATABASE=laravel_db
+  #     - DB_USERNAME=laravel_user
+  #     - DB_PASSWORD=laravel_password
+  #   ports:
+  #     - "8000:8000"
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - app-network
+
+  # Serviço do Nuxt (frontend)
+  frontend:
+    build:
+      context: git@github.com:werlesson/app-delivery-frontend.git # Repositório do frontend
+    container_name: nuxt-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+# Definir volumes para armazenamento persistente
+# volumes:
+#   mysql_data:
+
+# Definir rede compartilhada entre os serviços
+networks:
+  app-network:
+    driver: bridge
