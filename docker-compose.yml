@@ -7,7 +7,6 @@ services:
     volumes:
       - ./app-delivery-frontend:/app
       - /app/node_modules # Não sobrescreve o node_modules localmente
-      - /tmp/nitro # Cache do Nitro
     working_dir: /app
     command: yarn dev
     # depends_on:
