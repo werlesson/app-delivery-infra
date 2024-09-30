@@ -3,9 +3,12 @@ services:
     build:
       context: ./app-delivery-frontend
     ports:
-      - "3000:3000"
+      - "4001:3000"
     volumes:
-      - ./frontend:/app
+      - ./app-delivery-frontend:/app
+      - /app/node_modules  # Não sobrescreve o node_modules localmente
+    working_dir: /app
+    command: yarn dev
     # depends_on:
     #   - backend
 
