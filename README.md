@@ -1,16 +1,26 @@
 # Informações
 
-## Clonar o repositório de infraestrutura:
+## Clonar o repositório de infraestrutura
 
 Primeiro, clone o repositório de orquestração que contém o docker-compose.yml:
 
 ```
-git@github.com:werlesson/app-delivery-infra.git
-
-cd infra
+git clone git@github.com:werlesson/app-delivery-infra.git
 ```
 
-## Construir e iniciar os serviços:
+Entre na pasta clonada
+
+```
+cd app-delivery-infra
+```
+
+Agora clone o repositório de frontend dentro da pasta acessada anteriormente (app-delivery-infra)
+
+```
+git clone git@github.com:werlesson/app-delivery-frontend.git
+```
+
+## Construir e iniciar os serviços
 
 Com o docker-compose.yml no repositório de infraestrutura, o Docker vai clonar automaticamente os repositórios de frontend e backend ao construir os serviços.
 
@@ -18,7 +28,7 @@ Com o docker-compose.yml no repositório de infraestrutura, o Docker vai clonar 
 docker-compose up --build
 ```
 
-## Atualizar código separadamente:
+## Atualizar código separadamente
 
 Se você fizer alterações no código do Nuxt ou Laravel, pode versionar e atualizar os respectivos repositórios separadamente. O repositório de infraestrutura (onde está o docker-compose.yml) pode ser atualizado para refletir alterações nos builds, configurações, ou dependências.
 
