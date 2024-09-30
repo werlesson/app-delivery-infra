@@ -3,12 +3,12 @@ services:
     build:
       context: ./app-delivery-frontend
     ports:
-      - "4001:3000"
+      - "3000:3000"
     volumes:
       - ./app-delivery-frontend:/app
       - /app/node_modules # Não sobrescreve o node_modules localmente
     working_dir: /app
-    command: yarn dev
+    command: sh -c "rm -f /tmp/nitro/*.sock && yarn dev"
     # depends_on:
     #   - backend
 
