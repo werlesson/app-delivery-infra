@@ -37,13 +37,13 @@ Windows: execute o arquivo script.bat clicando duas vezes ou pelo prompt de coma
 Linux: dê permissão de execução com
 
 ```
-chmod +x setup-linux.sh
+chmod +x script.sh
 ```
 
  e execute-o com
 
  ```
- ./setup-linux.sh
+ ./script.sh
  ```
 
 Esses scripts vão clonar os repositórios e iniciar os serviços usando Docker Compose automaticamente.
