@@ -28,6 +28,26 @@ Com o docker-compose.yml no repositório de infraestrutura, o Docker vai clonar 
 docker-compose up --build
 ```
 
+## Scripts
+
+Para usar os scripts:
+
+Windows: execute o arquivo script.bat clicando duas vezes ou pelo prompt de comando.
+
+Linux: dê permissão de execução com
+
+```
+chmod +x setup-linux.sh
+```
+
+ e execute-o com
+
+ ```
+ ./setup-linux.sh
+ ```
+
+Esses scripts vão clonar os repositórios e iniciar os serviços usando Docker Compose automaticamente.
+
 ## Atualizar código separadamente
 
 Se você fizer alterações no código do Nuxt ou Laravel, pode versionar e atualizar os respectivos repositórios separadamente. O repositório de infraestrutura (onde está o docker-compose.yml) pode ser atualizado para refletir alterações nos builds, configurações, ou dependências.
